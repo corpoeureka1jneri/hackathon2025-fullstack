@@ -1,0 +1,102 @@
+[
+  {
+    "titulo": "Error crítico en producción afecta pagos",
+    "descripcion": "Usuarios no pueden completar pagos desde hace 20 minutos. Impacto alto en ventas.",
+    "estado": "nuevo",
+    "prioridad": "alta",
+    "asignatario": "Equipo de Producción",
+    "etiquetas": ["producción", "pagos", "urgente"],
+    "explicacion_ia": "Detectada urgencia crítica por palabras clave 'crítico', 'producción' y 'impacto alto'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Acceso al módulo de facturación",
+    "descripcion": "Nuevo integrante requiere permisos de lectura en contabilidad para revisar facturas.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Administrador de Sistemas",
+    "etiquetas": ["acceso", "contabilidad"],
+    "explicacion_ia": "Solicitud de permisos identificada por términos 'acceso' y 'permisos'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Duda sobre filtros en vista de clientes",
+    "descripcion": "¿Cómo filtrar clientes por país y fecha de registro?",
+    "estado": "nuevo",
+    "prioridad": "baja",
+    "asignatario": "Soporte Técnico",
+    "etiquetas": ["soporte", "consulta"],
+    "explicacion_ia": "Consulta simple detectada por pregunta directa y términos de interfaz.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Sugerencia: atajo para marcar tickets como resueltos",
+    "descripcion": "Facilitar cierre masivo con un botón en la vista de lista.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Equipo de Desarrollo",
+    "etiquetas": ["mejora", "UX"],
+    "explicacion_ia": "Idea de mejora identificada por 'sugerencia' y 'mejora'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Lentitud en base de datos",
+    "descripcion": "Consultas tardan más de lo normal en horas pico; afecta tiempos de respuesta.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Equipo de Infraestructura",
+    "etiquetas": ["infraestructura", "rendimiento"],
+    "explicacion_ia": "Incidente de rendimiento detectado por 'lentitud' y 'tiempos de respuesta'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Descuento no aplicado en pedidos",
+    "descripcion": "Al crear un pedido con cupón, el descuento no se refleja en el total.",
+    "estado": "nuevo",
+    "prioridad": "alta",
+    "asignatario": "Equipo de Ventas",
+    "etiquetas": ["bug", "ventas"],
+    "explicacion_ia": "Bug funcional identificado por 'no se refleja' y contexto de ventas.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Reporte semanal de tickets por prioridad",
+    "descripcion": "Necesito un panel con conteo por prioridad y estado para el standup.",
+    "estado": "nuevo",
+    "prioridad": "baja",
+    "asignatario": "Equipo de BI",
+    "etiquetas": ["reporte", "métricas"],
+    "explicacion_ia": "Solicitud de reporte detectada por 'reporte' y 'conteo'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Ticket duplicado de pagos",
+    "descripcion": "Mismo problema ya registrado en otro ticket; cerrar este como duplicado.",
+    "estado": "cancelado",
+    "prioridad": "baja",
+    "asignatario": "Soporte",
+    "etiquetas": ["duplicado"],
+    "explicacion_ia": "Duplicado identificado por 'duplicado' y 'mismo problema'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Rol sin permisos para aprobar gastos",
+    "descripcion": "Un rol de gerente no puede aprobar gastos, pero debería poder.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Administrador de Seguridad",
+    "etiquetas": ["seguridad", "permisos", "gastos"],
+    "explicacion_ia": "Problema de permisos detectado por 'permisos' y 'aprobar gastos'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Cliente no recibe confirmación de pedido",
+    "descripcion": "El correo de confirmación no llega tras completar el pedido; revisar configuración.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Equipo de Correo",
+    "etiquetas": ["correo", "confirmación", "pedidos"],
+    "explicacion_ia": "Problema de correo identificado por 'correo' y 'no llega'.",
+    "origen_ia": "reglas"
+  }
+]

@@ -1,0 +1,252 @@
+[
+  {
+    "titulo": "No puedo iniciar sesión en la plataforma",
+    "descripcion": "Intento ingresar y me dice contraseña incorrecta, a pesar de que la acabo de restablecer. ¿Podrían ayudar?",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Soporte Técnico",
+    "etiquetas": ["login", "usuarios"],
+    "explicacion_ia": "Problema de inicio de sesión detectado por 'no puedo iniciar sesión' y 'contraseña'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Actualizar logo de la empresa",
+    "descripcion": "El logo en la página principal sigue siendo el anterior, ya tenemos el nuevo en alta resolución.",
+    "estado": "nuevo",
+    "prioridad": "baja",
+    "asignatario": "Equipo de Marketing",
+    "etiquetas": ["actualización", "branding"],
+    "explicacion_ia": "Solicitud de actualización de contenido detectada por 'logo' y 'nuevo'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Sistema envía notificaciones duplicadas",
+    "descripcion": "Los usuarios reciben dos correos por cada alerta programada, esto genera confusión.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Equipo de Notificaciones",
+    "etiquetas": ["correo", "notificaciones", "bug"],
+    "explicacion_ia": "Bug de duplicación detectado por 'duplicadas' y 'notificaciones'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Reembolso incorrecto en tarjeta",
+    "descripcion": "Se realizó un reembolso, pero el monto acreditado no corresponde al cobrado inicialmente.",
+    "estado": "nuevo",
+    "prioridad": "alta",
+    "asignatario": "Finanzas",
+    "etiquetas": ["reembolsos", "pagos", "error"],
+    "explicacion_ia": "Error financiero detectado por 'reembolso incorrecto' y 'monto'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Solicitud de capacitaciones sobre nueva funcionalidad",
+    "descripcion": "El equipo de ventas necesita una sesión para entender la última actualización del módulo de informes.",
+    "estado": "nuevo",
+    "prioridad": "baja",
+    "asignatario": "Recursos Humanos",
+    "etiquetas": ["capacitacion", "ventas", "nueva_funcionalidad"],
+    "explicacion_ia": "Petición de formación detectada por 'necesita una sesión' y 'actualización'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Error 404 al acceder a enlace de ayuda",
+    "descripcion": "En la página de configuración, el enlace 'más información' lleva a un 404.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Equipo de Contenidos",
+    "etiquetas": ["enlace", "404", "ayuda"],
+    "explicacion_ia": "Enlace roto detectado por '404' y 'más información'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Generación de reportes tarda demasiado",
+    "descripcion": "Al solicitar un reporte mensual, el sistema queda cargando más de 5 minutos.",
+    "estado": "en_progreso",
+    "prioridad": "alta",
+    "asignatario": "Equipo de BI",
+    "etiquetas": ["rendimiento", "reportes"],
+    "explicacion_ia": "Problemas de rendimiento en BI detectados por 'tarda demasiado' y 'reportes'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Solicitud de nuevo campo en formulario de clientes",
+    "descripcion": "Necesitamos agregar un campo para el número de identificación fiscal en el registro de clientes.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Equipo de Producto",
+    "etiquetas": ["mejora", "formulario", "clientes"],
+    "explicacion_ia": "Mejora funcional detectada por 'agregar un campo' y 'registro'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "No se aplican cambios en la configuración de idioma",
+    "descripcion": "A pesar de seleccionar 'Inglés', la interfaz sigue en español después de guardar.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Equipo de Localización",
+    "etiquetas": ["idioma", "configuración", "bug"],
+    "explicacion_ia": "Bug de localización detectado por 'idioma' y 'no se aplican cambios'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Backup fallido en servidor secundario",
+    "descripcion": "El proceso nocturno de backup muestra errores y no se realiza en el servidor de respaldo.",
+    "estado": "nuevo",
+    "prioridad": "alta",
+    "asignatario": "Equipo de Infraestructura",
+    "etiquetas": ["backup", "servidor", "error"],
+    "explicacion_ia": "Error de backup detectado por 'backup fallido' y 'servidor secundario'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Conflicto de versiones en librerías de producción",
+    "descripcion": "Después de actualizar una librería, hay incompatibilidades con otras dependencias en el entorno productivo.",
+    "estado": "en_progreso",
+    "prioridad": "alta",
+    "asignatario": "DevOps",
+    "etiquetas": ["dependencias", "producción", "actualización"],
+    "explicacion_ia": "Problema de dependencias detectado por 'incompatibilidades' y 'actualizar una librería'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Restablecer contraseña para usuario inactivo",
+    "descripcion": "Un cliente que no accede desde hace meses no puede restablecer su contraseña; el enlace expira al momento.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Soporte al Cliente",
+    "etiquetas": ["contraseña", "usuario", "soporte"],
+    "explicacion_ia": "Problema de restablecimiento de contraseña detectado por 'no puede restablecer'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Solicitud de integración con API externa",
+    "descripcion": "Queremos conectar nuestro sistema con el servicio X para sincronizar datos de pedidos.",
+    "estado": "nuevo",
+    "prioridad": "baja",
+    "asignatario": "Equipo de Integraciones",
+    "etiquetas": ["integración", "API", "pedidos"],
+    "explicacion_ia": "Solicitud de integración detectada por 'conectar' y 'API externa'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Cuenta bloqueada por intentos fallidos",
+    "descripcion": "Tras varios intentos de login, mi cuenta quedó bloqueada. Solicito desbloqueo urgente.",
+    "estado": "nuevo",
+    "prioridad": "alta",
+    "asignatario": "Seguridad",
+    "etiquetas": ["bloqueo", "login", "urgente"],
+    "explicacion_ia": "Cuenta bloqueada detectada por 'bloqueada' y 'desbloqueo urgente'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Contenido no se muestra en el dashboard",
+    "descripcion": "Las métricas del último trimestre no aparecen en el panel principal; solo se ve una pantalla en blanco.",
+    "estado": "nuevo",
+    "prioridad": "alta",
+    "asignatario": "Equipo de Frontend",
+    "etiquetas": ["dashboard", "métricas", "bug"],
+    "explicacion_ia": "Fallo en el dashboard detectado por 'pantalla en blanco' y 'no aparecen métricas'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Confirmaciones de entrega no actualizan estado",
+    "descripcion": "Los pedidos enviados marcados como entregados no cambian a estado 'completado'.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Logística",
+    "etiquetas": ["entrega", "pedidos", "estado"],
+    "explicacion_ia": "Error de estado de pedidos detectado por 'no cambian a completado'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Alerta de seguridad por intento de acceso sospechoso",
+    "descripcion": "Se detectó un acceso desde una IP desconocida. Revisar si es un falso positivo.",
+    "estado": "nuevo",
+    "prioridad": "alta",
+    "asignatario": "Equipo de Seguridad",
+    "etiquetas": ["seguridad", "alerta", "acceso"],
+    "explicacion_ia": "Incidente de seguridad detectado por 'acceso sospechoso' y 'IP desconocida'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Ajuste en fórmula de cálculo de comisiones",
+    "descripcion": "Las comisiones calculadas para los vendedores de abril no coinciden con el porcentaje acordado.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Finanzas",
+    "etiquetas": ["comisiones", "cálculo", "ventas"],
+    "explicacion_ia": "Error en fórmula detectado por 'no coinciden' y 'porcentaje acordado'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Fallo al exportar datos a Excel",
+    "descripcion": "Al intentar exportar la lista de usuarios a un archivo .xlsx se genera un documento corrupto.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Equipo de Desarrollo",
+    "etiquetas": ["exportar", "Excel", "bug"],
+    "explicacion_ia": "Problema de exportación detectado por 'documento corrupto' y 'Excel'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Solicitar asignación de hardware para nuevo empleado",
+    "descripcion": "Se requiere laptop y monitor para el nuevo analista que se incorpora el lunes.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Recursos Humanos",
+    "etiquetas": ["hardware", "empleado", "solicitud"],
+    "explicacion_ia": "Requerimiento de equipamiento detectado por 'se requiere laptop' y 'nuevo analista'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Interfaz móvil muestra menús superpuestos",
+    "descripcion": "En la versión móvil, el menú principal se superpone con el chat, impidiendo su uso.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Diseño UX",
+    "etiquetas": ["móvil", "UI", "bug"],
+    "explicacion_ia": "Problema de interfaz móvil detectado por 'menús superpuestos'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Excepción no controlada al importar clientes",
+    "descripcion": "Al subir un archivo CSV de clientes, aparece un error de sistema sin detalles.",
+    "estado": "nuevo",
+    "prioridad": "alta",
+    "asignatario": "Backend",
+    "etiquetas": ["importación", "clientes", "error"],
+    "explicacion_ia": "Excepción no controlada detectada por 'error de sistema' y 'CSV'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Necesitamos traducir la aplicación al portugués",
+    "descripcion": "Expansión a Brasil requiere que el sistema esté disponible en portugués para los nuevos usuarios.",
+    "estado": "nuevo",
+    "prioridad": "baja",
+    "asignatario": "Equipo de Localización",
+    "etiquetas": ["traducción", "portugués", "expansión"],
+    "explicacion_ia": "Petición de traducción detectada por 'portugués' y 'expansión a Brasil'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Solicitar revisión de términos y condiciones",
+    "descripcion": "Preparar nueva versión del documento legal para cumplir con la normativa vigente.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Legal",
+    "etiquetas": ["legal", "términos", "normativa"],
+    "explicacion_ia": "Actualización legal detectada por 'nueva versión' y 'normativa vigente'.",
+    "origen_ia": "reglas"
+  },
+  {
+    "titulo": "Videos de ayuda no cargan en Firefox",
+    "descripcion": "En Mozilla Firefox, los videos tutoriales se quedan en negro y no inician.",
+    "estado": "nuevo",
+    "prioridad": "media",
+    "asignatario": "Equipo Multimedia",
+    "etiquetas": ["videos", "navegador", "bug"],
+    "explicacion_ia": "Incompatibilidad de navegador detectada por 'Firefox' y 'no inician'.",
+    "origen_ia": "reglas"
+  }
+]
