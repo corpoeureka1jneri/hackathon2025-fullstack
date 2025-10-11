@@ -3,6 +3,7 @@ import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { AlertCircle, Clock, CheckCircle, XCircle, Tag, User, Bot } from 'lucide-react';
 import type { Ticket } from '@/types/ticket';
+import { useAuth } from '@/contexts/auth-context';
 
 interface TicketCardProps {
   ticket: Ticket;
@@ -24,7 +25,9 @@ const statusConfig = {
 };
 
 export function TicketCard({ ticket, onStatusChange, isUpdating }: TicketCardProps) {
+  const { user } = useAuth();
   const StatusIcon = statusConfig[ticket.estado].icon;
+  const isAdmin = user?.role === 'admin';
 
   return (
     <Card className="hover:shadow-md transition-shadow">
@@ -90,7 +93,7 @@ export function TicketCard({ ticket, onStatusChange, isUpdating }: TicketCardPro
           </div>
         )}
       </CardContent>
-      {onStatusChange && ticket.id && (
+      {isAdmin && onStatusChange && ticket.id && (
         <CardFooter className="gap-2">
           {ticket.estado === 'nuevo' && (
             <Button 
