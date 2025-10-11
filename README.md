@@ -121,7 +121,7 @@ Crear un archivo `.env.local` en la carpeta `frontend`:
 
 ```env
 OPENAI_API_KEY="tu api key"
-NEXT_PUBLIC_ODOO_URL=http://localhost:8069
+NEXT_PUBLIC_ODOO_URL=http://localhost:8069/api/support
 ```
 
 ---
