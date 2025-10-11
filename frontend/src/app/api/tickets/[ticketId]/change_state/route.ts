@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { auditStore } from '../../_auditStore';
 
 const ODOO_API_BASE = process.env.NEXT_PUBLIC_ODOO_API_URL || 'http://localhost:8069/api/support';
 
@@ -132,12 +133,23 @@ export async function POST(
       );
     }
 
+    // Log the state change to audit store
+    const estadoAnterior = result.estado_anterior || 'desconocido';
+    auditStore.addLog({
+      ticketId,
+      changeType: 'estado',
+      fieldChanged: 'estado',
+      oldValue: estadoAnterior,
+      newValue: estado,
+      changedBy: 'system', // Could be extracted from auth headers
+    });
+
     return NextResponse.json({
       success: true,
       ticket: {
         id: result.id ?? ticketId,
         titulo: result.titulo,
-        estadoAnterior: result.estado_anterior,
+        estadoAnterior: estadoAnterior,
         estadoActual: result.estado_actual ?? estado,
       },
       message: result.message || 'Estado del ticket actualizado exitosamente.',

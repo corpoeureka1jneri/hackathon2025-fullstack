@@ -10,10 +10,11 @@ import { ErrorDisplay } from '@/components/error-display';
 import { EmptyState } from '@/components/empty-state';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Loader2, Ticket as TicketIcon, LogOut, User } from 'lucide-react';
+import { Loader2, Ticket as TicketIcon, LogOut, User, History } from 'lucide-react';
 import type { TicketPriority, TicketStatus } from '@/types/ticket';
 import { useAuth } from '@/contexts/auth-context';
 import { useTickets } from '@/hooks/use-tickets';
+import Link from 'next/link';
 
 export default function Home() {
   const { user, isAuthenticated, logout } = useAuth();
@@ -70,6 +71,12 @@ export default function Home() {
               <Badge variant="outline">
                 {user?.role === 'admin' ? 'Administrador' : 'Cliente'}
               </Badge>
+              <Link href="/auditoria">
+                <Button variant="outline" size="sm">
+                  <History className="h-4 w-4 mr-2" />
+                  Auditoría
+                </Button>
+              </Link>
               <Button variant="outline" size="sm" onClick={logout}>
                 <LogOut className="h-4 w-4 mr-2" />
                 Cerrar Sesión
