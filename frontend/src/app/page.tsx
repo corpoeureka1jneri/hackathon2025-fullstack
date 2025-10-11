@@ -95,7 +95,7 @@ export default function Home() {
         <div className="mb-6 space-y-4">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-semibold">Tickets</h2>
-            <CreateTicketDialog onTicketCreated={fetchTickets} />
+            {user?.role === 'admin' && <CreateTicketDialog onTicketCreated={fetchTickets} />}
           </div>
           
           <TicketFilters
