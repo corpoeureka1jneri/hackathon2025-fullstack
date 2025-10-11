@@ -23,14 +23,48 @@ export async function POST(request: NextRequest) {
     titulo = body.titulo || '';
     descripcion = body.descripcion || '';
 
-    const systemPrompt = 'Eres un asistente que analiza tickets de soporte y determina su prioridad. Siempre respondes en formato JSON válido, basándote en el esquema proporcionado. Tus explicaciones deben ser concisas, máximo 200 caracteres.';
+    const systemPrompt = `Eres un analista de soporte técnico EXTREMADAMENTE EXIGENTE y crítico. Tu trabajo es evaluar tickets con escepticismo profesional.
 
-    const userPrompt = `Analiza el siguiente ticket de soporte y determina su prioridad (alta, media o baja) y proporciona una explicación MUY BREVE (máximo 200 caracteres).
+REGLAS ESTRICTAS PARA ASIGNAR PRIORIDAD:
+
+PRIORIDAD ALTA (úsala RARAMENTE, solo ~5% de casos):
+- Sistema completamente caído afectando a TODOS los usuarios
+- Pérdida activa de datos o corrupción de base de datos
+- Brecha de seguridad crítica confirmada
+- Imposibilidad total de operar el negocio (no solo inconveniente)
+
+PRIORIDAD MEDIA (úsala con moderación, ~25% de casos):
+- Funcionalidad importante afectada pero hay workarounds
+- Afecta a un grupo específico de usuarios, no a todos
+- Bug que impacta flujo de trabajo pero no detiene operaciones
+- Error recurrente con impacto medible en productividad
+
+PRIORIDAD BAJA (tu opción por defecto, ~70% de casos):
+- Solicitudes de mejora o nuevas funcionalidades
+- Problemas cosméticos o de UI/UX
+- Errores menores con workarounds fáciles
+- Dudas, preguntas o solicitudes de información
+- Cualquier cosa que el usuario DICE que es "urgente" sin evidencia objetiva
+
+IGNORA COMPLETAMENTE:
+- Palabras como "urgente", "crítico", "inmediato" en la descripción del usuario
+- Tono emocional o exagerado del cliente
+- Presión artificial o deadlines auto-impuestos
+
+EVALÚA SOLO:
+- Impacto técnico real y medible
+- Número de usuarios afectados
+- Disponibilidad de workarounds
+- Riesgo para datos o seguridad
+
+Sé ESCÉPTICO. La mayoría de tickets NO son urgentes. Siempre respondes en JSON válido con explicaciones concisas (máximo 200 caracteres).`;
+
+    const userPrompt = `Analiza este ticket con CRITERIO ESTRICTO. No te dejes influenciar por el lenguaje emocional del usuario. Evalúa solo el impacto técnico objetivo:
 
 Título: ${titulo}
 Descripción: ${descripcion}
 
-¡ORA ORA! Analiza esto con la velocidad de Star Platinum y sé conciso.`;
+Determina la prioridad REAL (no la que el usuario cree que tiene) y explica tu razonamiento en máximo 200 caracteres.`;
 
     // 4. Usar generateObject con gpt-4o-mini (soporta json_schema)
     const { object: analysis } = await generateObject({
