@@ -7,6 +7,7 @@ import type { Ticket } from '@/types/ticket';
 interface TicketCardProps {
   ticket: Ticket;
   onStatusChange?: (ticketId: number, newStatus: Ticket['estado']) => void;
+  isUpdating?: boolean;
 }
 
 const priorityConfig = {
@@ -22,7 +23,7 @@ const statusConfig = {
   cancelado: { icon: XCircle, variant: 'secondary' as const, label: 'Cancelado' },
 };
 
-export function TicketCard({ ticket, onStatusChange }: TicketCardProps) {
+export function TicketCard({ ticket, onStatusChange, isUpdating }: TicketCardProps) {
   const StatusIcon = statusConfig[ticket.estado].icon;
 
   return (
@@ -95,6 +96,7 @@ export function TicketCard({ ticket, onStatusChange }: TicketCardProps) {
             <Button 
               size="sm" 
               onClick={() => onStatusChange(ticket.id!, 'en progreso')}
+              disabled={isUpdating}
             >
               Iniciar
             </Button>
@@ -104,6 +106,7 @@ export function TicketCard({ ticket, onStatusChange }: TicketCardProps) {
               <Button 
                 size="sm" 
                 onClick={() => onStatusChange(ticket.id!, 'resuelto')}
+                disabled={isUpdating}
               >
                 Resolver
               </Button>
@@ -111,6 +114,7 @@ export function TicketCard({ ticket, onStatusChange }: TicketCardProps) {
                 size="sm" 
                 variant="outline"
                 onClick={() => onStatusChange(ticket.id!, 'cancelado')}
+                disabled={isUpdating}
               >
                 Cancelar
               </Button>
