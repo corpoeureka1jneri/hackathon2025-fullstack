@@ -1,0 +1,128 @@
+<odoo>
+    <record id="action_mark_as_resuelto" model="ir.actions.server">
+        <field name="name">Marcar como Resuelto</field>
+        <field name="model_id" ref="model_support_ticket"/>
+        <field name="binding_model_id" ref="model_support_ticket"/>
+        <field name="state">code</field>
+        <field name="code">records.mark_as_resuelto()</field>
+    </record>
+
+    <record id="support_ticket_view_form" model="ir.ui.view">
+        <field name="name">support.ticket.form</field>
+        <field name="model">support.ticket</field>
+        <field name="arch" type="xml">
+            <form string="Ticket">
+                <header>
+                    <button name="%(action_mark_as_resuelto)d" string="Marcar como Resuelto" 
+                            type="action" class="oe_highlight"
+                            invisible="estado in ['resuelto', 'cancelado']"/>
+                    <button name="action_set_estado_nuevo" string="Marcar como Nuevo"
+                            type="object" class="oe_link"
+                            invisible="estado == 'nuevo'"/>
+                    <button name="action_set_estado_en_progreso" string="Marcar En Progreso"
+                            type="object" class="oe_link"
+                            invisible="estado == 'en_progreso'"/>
+                    <button name="action_set_estado_resuelto" string="Marcar Resuelto"
+                            type="object" class="oe_link"
+                            invisible="estado == 'resuelto'"/>
+                    <button name="action_set_estado_cancelado" string="Marcar Cancelado"
+                            type="object" class="oe_link"
+                            invisible="estado == 'cancelado'"/>
+                    <field name="estado" widget="statusbar" statusbar_visible="nuevo,en_progreso,resuelto"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="titulo" placeholder="Ej: No puedo imprimir la factura..."/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="asignatario_id"/>
+                            <field name="prioridad" widget="priority"/>
+                            <field name="etiquetas_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        </group>
+                        <group>
+                            <field name="prioridad_ia" readonly="1"/>
+                            <field name="explicacion_ia" readonly="1"/>
+                            <field name="origen_ia" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="descripcion" string="Descripción">
+                            <field name="descripcion" placeholder="Describe el problema en detalle..."/>
+                        </page>
+                        <page name="auditoria" string="Auditoría">
+                            <field name="audit_ids" readonly="1">
+                                <list string="Historial de Cambios">
+                                    <field name="timestamp"/>
+                                    <field name="user_id"/>
+                                    <field name="change_type"/>
+                                    <field name="field_name"/>
+                                    <field name="old_value"/>
+                                    <field name="new_value"/>
+                                    <field name="description"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="support_ticket_view_tree" model="ir.ui.view">
+        <field name="name">support.ticket.list</field> <field name="model">support.ticket</field>
+        <field name="arch" type="xml">
+            <list string="Tickets" decoration-success="estado == 'resuelto'" decoration-warning="prioridad == 'alta'" decoration-muted="estado == 'cancelado'">
+                <field name="titulo"/>
+                <field name="prioridad" widget="priority"/>
+                <field name="estado"/>
+                <field name="asignatario_id"/>
+                <field name="etiquetas_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="support_ticket_view_search" model="ir.ui.view">
+        <field name="name">support.ticket.search</field>
+        <field name="model">support.ticket</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Tickets">
+                <field name="titulo"/>
+                <field name="descripcion"/>
+                <field name="asignatario_id"/>
+                <field name="etiquetas_ids"/>
+                <filter string="Nuevos" name="filter_nuevo" domain="[('estado', '=', 'nuevo')]"/>
+                <filter string="En Progreso" name="filter_en_progreso" domain="[('estado', '=', 'en_progreso')]"/>
+                <filter string="Resueltos" name="filter_resuelto" domain="[('estado', '=', 'resuelto')]"/>
+                <separator/>
+                <filter string="Prioridad Alta" name="filter_alta" domain="[('prioridad', '=', 'alta')]"/>
+                <filter string="Prioridad Media" name="filter_media" domain="[('prioridad', '=', 'media')]"/>
+                <filter string="Prioridad Baja" name="filter_baja" domain="[('prioridad', '=', 'baja')]"/>
+                <group expand="0" string="Agrupar por">
+                    <filter string="Estado" name="group_estado" context="{'group_by': 'estado'}"/>
+                    <filter string="Prioridad" name="group_prioridad" context="{'group_by': 'prioridad'}"/>
+                    <filter string="Asignatario" name="group_asignatario" context="{'group_by': 'asignatario_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="support_ticket_action" model="ir.actions.act_window">
+        <field name="name">Tickets de Soporte</field>
+        <field name="res_model">support.ticket</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="support_ticket_menu_root" 
+              name="Tickets &amp; Solicitudes" 
+              sequence="10"/>
+
+    <menuitem id="support_ticket_menu_action" 
+              name="Tickets" 
+              parent="support_ticket_menu_root" 
+              action="support_ticket_action"/>
+</odoo>
