@@ -1,0 +1,4 @@
+# Requirements for gestion_solicitudes module
+# Install with: pip install -r requirements.txt
+
+openai>=1.0.0
